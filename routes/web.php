@@ -32,7 +32,7 @@ Route::controller(AAAController::class)->prefix('XXX')->group(function() {
 
 
 use App\Http\Controllers\Admin\ProfileController;
-Route::contorller(ProfileController::class)->prefix('admin')->group(function() {
+Route::controller(ProfileController::class)->prefix('admin')->group(function() {
     Route::get('profile/create', 'add');
     Route::get('profile/edit', 'edit');
 });
