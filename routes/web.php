@@ -26,13 +26,13 @@ Route::controller(NewsController::class)->prefix('admin')->group(function() {
 
 
 use App\Http\Controllers\Admin\AAAController;
-Route::controller(AAAController::class)->prefix('XXX')->group(function()) {
+Route::controller(AAAController::class)->prefix('XXX')->group(function() {
     Route::get('XXX', 'bbb');
-}
+});
 
 
 use App\Http\Controllers\Admin\ProfileController;
-Route::contorller(ProfileController::class)->prefix('admin')->group(function()) {
+Route::contorller(ProfileController::class)->prefix('admin')->group(function() {
     Route::get('profile/create', 'add');
     Route::get('profile/edit', 'edit');
-}
+});
