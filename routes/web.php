@@ -21,9 +21,9 @@ Route::get('/', function () {
 // ユーザが admin/news/create にアクセスしたときに
 // コントローラ NewsController の add アクションに受け渡す
 use App\Http\Controllers\Admin\NewsController;
-Route::controller(NewsController::class)->prefix('admin')->group(function() {
-    Route::get('news/create', 'add')->middleware('auth');
-    
+Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
+    Route::get('news/create', 'add')->name('news.add');
+    Route::post('news/create', 'create')->name('news.create');
 });
 
 
