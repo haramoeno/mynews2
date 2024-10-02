@@ -9,7 +9,7 @@ class Profile extends Model
 {
     use HasFactory;
     // 以下を追記
-    protected $gyarded =array('id');
+    protected $guarded =array('id');
     
     public static $rules = array(
         'name' => 'required',
