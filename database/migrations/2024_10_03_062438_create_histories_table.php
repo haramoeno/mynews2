@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('news_id');
+            $table->bigInteger('profile_id');
             $table->string('edited_at');
             $table->timestamps();
         });
