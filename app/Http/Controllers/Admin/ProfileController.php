@@ -38,6 +38,19 @@ class profileController extends Controller
         //               ^^^^^^^^^^^^^^^^^^^^ ココに移動してね
     }
     
+    
+    public function index(Request $request)
+    {
+        $cond_title = $request->cond_title;
+            if ($cond_title != '') {
+                $posts = Profile::where('title', $cond_title)->get();
+            } else {
+                $posts = Profile::all();
+            }
+            return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+    }
+    
+    
     public function edit(Request $request)
     {
         
@@ -65,6 +78,19 @@ class profileController extends Controller
         // $history->save();
         
         
-        return redirect('admin/profile/edit?id='.$request->id);
+        return redirect('admin/profile/');
+    }
+    
+    // 以下を追記
+    
+    public function delete(Request $request)
+    {
+        // 該当するNews Modelを取得
+        $profile = Profile::find($request->id);
+        
+        // 削除する
+        $profile->delete();
+        
+        return redirect('admin/profile/');
     }
 }
