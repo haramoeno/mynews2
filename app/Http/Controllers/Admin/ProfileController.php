@@ -34,7 +34,7 @@ class profileController extends Controller
         $profile->fill($form);// 入力情報の反映
         $profile->save();// データベーステーブルにレコードを保存（インサート）する
 
-        return redirect('admin/profile/create');// 指定のＵＲＬに移動する
+        return redirect('admin/profile/');// 指定のＵＲＬに移動する
         //               ^^^^^^^^^^^^^^^^^^^^ ココに移動してね
     }
     
