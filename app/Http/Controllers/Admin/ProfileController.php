@@ -24,17 +24,18 @@ class profileController extends Controller
         
         
         $this->validate($request, Profile::$rules);
-        $profile = new Profile;
+        $profile = new Profile;// 新たなプロフィール情報の作成
         $form = $request->all();
         
         
         unset($form['_token']);
         
         
-        $profile->fill($form);
-        $profile->save();
+        $profile->fill($form);// 入力情報の反映
+        $profile->save();// データベーステーブルにレコードを保存（インサート）する
 
-        return redirect('admin/profile/create');
+        return redirect('admin/profile/create');// 指定のＵＲＬに移動する
+        //               ^^^^^^^^^^^^^^^^^^^^ ココに移動してね
     }
     
     public function edit(Request $request)
@@ -57,13 +58,13 @@ class profileController extends Controller
         
         $profile->fill($profile_form)->save();
         
+        // PHP/Laravel 12 課題
+        // $history = new History();
+        // $history->profile_id = $profile->id;
+        // $history->edited_at = Carbon::now();
+        // $history->save();
         
-        $history = new History();
-        $history->profile_id = $profile->id;
-        $history->edited_at = Carbon::now();
-        $history->save();
         
-        
-        return redirect('admin/profile');
+        return redirect('admin/profile/edit?id='.$request->id);
     }
 }
