@@ -36,17 +36,18 @@
                                 <div class="date">
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
-                                <div class="title">
-                                    {{ Str::limit($post->title, 150) }}
+                                <div class="name">
+                                    {{ Str::limit($post->name, 150) }}
                                 </div>
-                                <div class="body mt-3">
-                                    {{ Str::limit($post->body, 1500) }}
+                                <div class="gender">
+                                    {{ Str::limit($post->gender, 150) }}
                                 </div>
-                            </div>
-                            <div class="image col-md-6 text-right mt-4">
-                                @if ($post->image_path)
-                                    <img src="{{ secure_asset('storage/image/' . $post->image_path) }}">
-                                @endif
+                                <div class="hobby">
+                                    {{ Str::limit($post->hobby, 150) }}
+                                </div>
+                                <div class="introduction mt-3">
+                                    {{ Str::limit($post->introduction, 1500) }}
+                                </div>
                             </div>
                         </div>
                     </div>
