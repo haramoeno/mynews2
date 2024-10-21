@@ -3,7 +3,7 @@ body {
 }
 
 .navbar-laravel {
-  background-color: #00F;
+  background-color: #F00;
 }
 
 .header .logo {
@@ -48,5 +48,5 @@ body {
   width: 250px;
 }
 .posts .post .name {
-  background-color: #0F0;
+  background-color: #FF0;
 }

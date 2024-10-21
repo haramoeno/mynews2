@@ -9,18 +9,19 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="caption mx-auto">
-                                <div class="image">
-                                    @if ($headline->image_path)
-                                        <img src="{{ secure_asset('storage/image/' . $headline->image_path) }}">
-                                    @endif
+                                <div class="name p-2">
+                                    <h1>{{ Str::limit($headline->name, 70) }}</h1>
                                 </div>
-                                <div class="title p-2">
-                                    <h1>{{ Str::limit($headline->title, 70) }}</h1>
+                                <div class="gender p-2">
+                                    <h1>{{ Str::limit($headline->gender, 70) }}</h1>
+                                </div>
+                                <div class="hobby p-2">
+                                    <h1>{{ Str::limit($headline->hobby, 70) }}</h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ Str::limit($headline->title, 650) }}</p>
+                            <p class="introduction mx-auto">{{ Str::limit($headline->introduction, 650) }}</p>
                         </div>
                     </div>
                 </div>
